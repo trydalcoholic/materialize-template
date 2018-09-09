@@ -1407,7 +1407,7 @@
 		<operation error="log">
 			<search><![CDATA[if ($product_info) {]]></search>
 			<add position="after"><![CDATA[
-			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout'))) {
+			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout')) || $product_info['price'] <= 0) {
 				$add_cart = false;
 			} else {
 				$add_cart = true;
@@ -1423,7 +1423,7 @@
 		<operation error="log">
 			<search><![CDATA[if ($product_info) {]]></search>
 			<add position="after"><![CDATA[
-			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout'))) {
+			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout')) || $product_info['price'] <= 0) {
 				$data['add_cart'] = false;
 			} else {
 				$data['add_cart'] = true;
@@ -1435,7 +1435,7 @@
 		<operation error="log">
 			<search><![CDATA[$data['products'][] = array(]]></search>
 			<add position="before"><![CDATA[
-			if (($result['quantity'] <= 0) && (!$this->config->get('config_stock_checkout'))) {
+			if (($result['quantity'] <= 0) && (!$this->config->get('config_stock_checkout')) || $result['price'] <= 0) {
 				$add_cart = false;
 			} else {
 				$add_cart = true;
@@ -1451,7 +1451,7 @@
 		<operation error="log">
 			<search><![CDATA[$data['products'][] = array(]]></search>
 			<add position="before"><![CDATA[
-			if (($result['quantity'] <= 0) && (!$this->config->get('config_stock_checkout'))) {
+			if (($result['quantity'] <= 0) && (!$this->config->get('config_stock_checkout')) || $result['price'] <= 0) {
 				$add_cart = false;
 			} else {
 				$add_cart = true;
@@ -1467,7 +1467,7 @@
 		<operation error="log">
 			<search><![CDATA[$data['products'][] = array(]]></search>
 			<add position="before"><![CDATA[
-			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout'))) {
+			if (($product_info['quantity'] <= 0) && (!$this->config->get('config_stock_checkout')) || $product_info['price'] <= 0) {
 				$add_cart = false;
 			} else {
 				$add_cart = true;
